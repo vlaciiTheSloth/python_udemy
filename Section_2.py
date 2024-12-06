@@ -1,4 +1,5 @@
 # only the main project because of migrating
+# Section 2 main project - Bill + tip calculator
 
 print("Welcome to the tip calculator!")
 bill = float(input("What was the total bill? $"))
