@@ -3,22 +3,22 @@ import random
 hangman_stages = ['''
   +---+
   |   |
+  O   |
+ /|\  |
+ / \  |
       |
-      |
-      |
+=========''','''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
       |
 =========''', '''
   +---+
   |   |
   O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
+ /|\  |
       |
       |
 =========''', '''
@@ -32,24 +32,24 @@ hangman_stages = ['''
   +---+
   |   |
   O   |
- /|\  |
+  |   |
       |
       |
 =========''', '''
   +---+
   |   |
   O   |
- /|\  |
- /    |
+      |
+      |
       |
 =========''', '''
   +---+
   |   |
-  O   |
- /|\  |
- / \  |
       |
-=========''']
+      |
+      |
+      |
+=========''' ]
 
 word_list = ["aardvark", "baboon", "camel"]
 
@@ -66,12 +66,14 @@ correct_letters = []
 lives = 6
 
 while not game_over:
+    print(hangman_stages[lives])
     guess = str(input("Take a guess! ")).lower()
     print(guess)
 
     display = ""
 
     for char in chosen_word:
+        trigger = False
         if char == guess:
             display += char
             correct_letters.append(char)
@@ -79,9 +81,11 @@ while not game_over:
             display += char
         else:
             display += "_"
+            trigger = True
+        
+        if trigger == True:
             lives -= 1
 
-    print(hangman_stages[lives])
     print(display)
 
     if "_" not in display:
