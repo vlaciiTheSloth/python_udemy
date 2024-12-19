@@ -9,8 +9,9 @@ print(Section_7_hm_art.hangman_ascii)
 placeholder = ""
 for cnt in range(0, len(chosen_word)):
     placeholder += "_"
+chosen_word_len = len(chosen_word)
 
-print(placeholder)
+print(f"{placeholder} ({chosen_word_len})")
 game_over = False
 correct_letters = []
 wrong_guesses = []
@@ -19,7 +20,7 @@ lives = 6
 while not game_over:
     print(f"\n******************** {lives}/6 LIVES LEFT ********************")
     guess = str(input("Take a guess! ")).lower()
-    print(guess)
+
     if guess in correct_letters:
         print("You've already guessed this letter: '" + guess + "'.")
     elif len(guess) == len(chosen_word) and guess == chosen_word:
@@ -28,8 +29,7 @@ while not game_over:
         game_over = True
         break
     elif len(guess) > 1:
-        print("Please guess make a guess on one single letter.")
-
+        print("Please make a guess on one single letter.")
 
     display = ""
 
@@ -42,7 +42,7 @@ while not game_over:
         else:
             display += "_"
 
-    print(display)
+    print(f"{display} ({chosen_word_len})")
 
     if guess not in chosen_word:
         if guess in wrong_guesses:
