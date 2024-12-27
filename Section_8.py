@@ -27,4 +27,18 @@ def greet_with_name_location(name, location):
 
 greet_with_name_location("Laci", "Debrecen") # positional arguments
 
-greet_with_name_location(location = "Debrecen", name = "Laci")
+greet_with_name_location(location = "Debrecen", name = "Laci") # keyword agruments
+
+def calculate_love_score(first_name, second_name):
+    truecount = 0
+    lovecount = 0
+    for char in first_name + second_name:
+        for char2 in "true":
+            if char == char2:
+                truecount += 1
+        for char3 in "love":
+            if char == char3:
+                lovecount += 1
+    print(f"{truecount}{lovecount}")
+    
+calculate_love_score("Kanye West", "Kim Kardashian")
