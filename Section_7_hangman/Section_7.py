@@ -23,11 +23,14 @@ while not game_over:
 
     if guess in correct_letters:
         print("You've already guessed this letter: '" + guess + "'.")
-    elif len(guess) == len(chosen_word) and guess == chosen_word:
-        print("Are you late from somewhere? Nevermind, you got the word! You won!")
-        print(Section_7_hm_art.you_won)
-        game_over = True
-        break
+    elif len(guess) == len(chosen_word):
+        if guess == chosen_word:
+            print("Are you late from somewhere? Nevermind, you got the word! You won!")
+            print(Section_7_hm_art.you_won)
+            game_over = True
+            break
+        else:
+            print("Don't rush this! Slow and steady wins the race ;)")
     elif len(guess) > 1:
         print("Please make a guess on one single letter.")
 
