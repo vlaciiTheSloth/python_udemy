@@ -27,7 +27,7 @@ def greet_with_name_location(name, location):
 
 greet_with_name_location("Laci", "Debrecen") # positional arguments
 
-greet_with_name_location(location = "Debrecen", name = "Laci") # keyword agruments
+greet_with_name_location(location = "Debrecen", name = "Laci") # keyword arguments
 
 def calculate_love_score(first_name, second_name):
     truecount = 0
